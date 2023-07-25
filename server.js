@@ -21,10 +21,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 
-app.get('/',function(req, res){
-    console.log(req.body);
-    console.log('Endpoint is working fine');
-    res.json(req.body);
+app.get('*',function(req, res){
+
+    console.log('Endpoint donot exist');
+    res.status(404).send('Endpoint donot exist');
 });
 
 const PORT = process.env.PORT || 3000;
